@@ -1,0 +1,3 @@
+[submodule "forkfrom/forkfrom"]
+	path = forkfrom/forkfrom
+	url = https://github.com/GuoYuefei/SyncPlayer.git

@@ -28,8 +28,8 @@ export default class PlayerExample extends Component {
             t: new Date(),
             id_sync: '',
             input_id: '',           // Date.now().toString()
-            playerSource: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-            inputVideoUrl: 'https://media.w3.org/2010/05/video/movie_300.mp4',
+            playerSource: '',
+            inputVideoUrl: '',
             // playerSource: 'https://wowzaec2demo.streamlock.net/vod-multitrack/_definst_/smil:ElephantsDream/elephantsdream2.smil/playlist.m3u8',
             // inputVideoUrl: 'https://wowzaec2demo.streamlock.net/vod-multitrack/_definst_/smil:ElephantsDream/elephantsdream2.smil/playlist.m3u8',
             currentTime: 0,
@@ -269,7 +269,7 @@ export default class PlayerExample extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: 16 }}>
+            <div>
                 {
                     dev && (<Button style={{ marginBottom: 16, marginLeft: 8 }} onClick={() => {
                         // eslint-disable-next-line no-console
@@ -280,9 +280,9 @@ export default class PlayerExample extends Component {
                 }
 
                 <Row>
-                    <Col xs={{ span: 18, offset: 3 }} md={{ span: 5, offset: 0 }}
-                        lg={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 0 }} style={{ left: 8 }}>
-                        <Row style={{ marginBottom: 8 }}>
+                    <Col xs={{ span: 15, offset: 0 }} md={{ span: 5, offset: 0 }}
+                        lg={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 0, right: 5 }} style={{ top: 15, left: 5 }}>
+                        <Row style={{ marginBottom: 15, width: 180 }}>
                             <Input.TextArea
                                 showCount
                                 maxLength={30}
@@ -293,7 +293,7 @@ export default class PlayerExample extends Component {
                                 onChange={this.handleIdSyncValueChange}
                             />
                         </Row>
-                        <Row >
+                        <Row>
                             <Form.Item>
                                 <Button type="button" onClick={this.updateId} icon={<UploadOutlined />}>
                                     Update ID
@@ -309,7 +309,7 @@ export default class PlayerExample extends Component {
                         </Row>
                     </Col>
                     <Col lg={{ span: 18, offset: 0 }} xs={{ span: 18, offset: 3 }}
-                        md={{ span: 19, offset: 0 }}
+                        md={{ span: 19, offset: 0 }} style={{ top: 15 }}
                     >
                         <Player
                             ref={player => {
@@ -346,7 +346,7 @@ export default class PlayerExample extends Component {
                                 <Input
                                     name="inputVideoUrl"
                                     id="inputVideoUrl"
-                                    placeholder="Video Url"
+                                    placeholder="Input Video Url"
                                     value={this.state.inputVideoUrl}
                                     onChange={this.handleValueChange}
                                 />
